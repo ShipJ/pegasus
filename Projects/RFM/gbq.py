@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import pandas_gbq as gbq
 from datetime import datetime, date, timedelta
@@ -5,6 +6,9 @@ pd.set_option('display.width', 320)
 
 
 def bq_getdata(project, query):
+    if not os.path.isfile('./bigquery_credentials.dat'):
+        print 'This is the first time you have connected to Big Query - you will' \
+              ' need to follow the link below to get an authorisation token.\n'
     return gbq.read_gbq(query=query, project_id=project)
 
 
