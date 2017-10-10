@@ -53,7 +53,7 @@ def get_days():
     Asks user for Time period over which to analyse data.
     :return: Int - Number of days corresponding to 3 months, 1 year etc. 
     """
-    print 'Over how long should the data be analysed?\n(Eg. Last Week -> 7 days preceding yesterday)\n\n' \
+    print 'Over how long should the data be analysed?\n(Eg. Last Week = 7 days preceding yesterday)\n\n' \
           'Yesterday: [1]\nLast Week: [2]\nLast Month: [3]\n Last Quarter: [4]\nLast 6 Months: [5]\nLast Year: [6]' \
           '\nAll Time: [7]\n'
     source = raw_input()
