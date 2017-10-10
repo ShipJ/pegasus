@@ -1,9 +1,5 @@
-import sys
 import Projects.RFM.gbq as gbq
 import Projects.RFM.analyse as an
-from Config.structure import get_path
-from Config.security import get_pwd
-
 
 
 def main():
@@ -18,8 +14,7 @@ def main():
     results = an.aggregate_rfm(project, dates)
     # compute recency, frequency etc
 
-    path = get_path()
-
+    print results
 
 
 if __name__ == '__main__':
