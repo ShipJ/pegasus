@@ -13,16 +13,9 @@ def main():
     # Specific dates of each day (for BQ table names)
     dates = gbq.get_dates(days)
     # Compute model over given range
-    agg = an.aggregate_rfm(project, dates)
+    agg = an.aggregate(project, dates)
     # compute recency, frequency etc
-    # rfm = an.rf_compute(agg)
-
-
-
-
-
-
-
+    rfm = an.rf_compute(agg)
 
 
 
