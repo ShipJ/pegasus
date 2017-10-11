@@ -48,18 +48,31 @@ def get_dates(n):
     return list_of_dates
 
 
+def days_between(d1, d2):
+    d1 = date(int(d1[:4]), int(d1[4:6]), int(d1[6:]))
+    d2 = date(int(d2[:4]), int(d2[4:6]), int(d2[6:]))
+    return abs((d2 - d1).days)
+
+
 def get_days():
     """
     Asks user for Time period over which to analyse data.
     :return: Int - Number of days corresponding to 3 months, 1 year etc. 
     """
-    print 'Over how long should the data be analysed?\n(Eg. Last Week = 7 days preceding yesterday)\n\n' \
+    print 'Over how long should the data be analysed?\n\n' \
           'Yesterday: [1]\nLast Week: [2]\nLast Month: [3]\n Last Quarter: [4]\nLast 6 Months: [5]\nLast Year: [6]' \
-          '\nAll Time: [7]\n'
+          '\nAll Time: [7]\nSelect Dates: [8]\n'
     source = raw_input()
     dayMap = {'1': 1, '2': 7, '3': 28, '4': 84, '5': 168, '6': 336, '7': 'all'}
     if source in ['1', '2', '3', '4', '5', '6', '7']:
         return dayMap[source]
+    if source == '8':
+        print 'Please enter the first date:\n(YYYYMMDD):\n'
+        d1 = raw_input()
+        print 'Please enter the second date:\n(YYYYMMDD):\n'
+        d2 = raw_input()
+        datediff = days_between(d1, d2)
+        return datediff
     else:
         print 'Time Period not recognised, please select a valid option... \n'
         return get_days()
