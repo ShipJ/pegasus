@@ -2,7 +2,7 @@ import pandas as pd
 import Projects.RFM.gbq as gbq
 
 
-def aggregate_loop(project, date_range):
+def aggregate(project, date_range):
     """
     For each day in the date range inputted above, request big query for the data and concat all results
     :param project: Str - Name of the project within BQ
