@@ -60,7 +60,7 @@ def get_days():
     :return: Int - Number of days corresponding to 3 months, 1 year etc. 
     """
     print 'Over how long should the data be analysed?\n\n' \
-          'Yesterday: [1]\nLast Week: [2]\nLast Month: [3]\n Last Quarter: [4]\nLast 6 Months: [5]\nLast Year: [6]' \
+          'Yesterday: [1]\nLast Week: [2]\nLast Month: [3]\nLast Quarter: [4]\nLast 6 Months: [5]\nLast Year: [6]' \
           '\nAll Time: [7]\nSelect Dates: [8]\n'
     source = raw_input()
     dayMap = {'1': 1, '2': 7, '3': 28, '4': 84, '5': 168, '6': 336, '7': 'all'}
