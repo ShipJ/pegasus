@@ -1,9 +1,9 @@
 import os
 import pandas as pd
 import pandas_gbq as gbq
+import pymysql.cursors
 from datetime import datetime, date, timedelta
 pd.set_option('display.width', 320)
-
 
 def bq_getdata(project, query):
     if not os.path.isfile('./bigquery_credentials.dat'):
