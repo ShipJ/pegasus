@@ -5,7 +5,7 @@ from Config.structure import get_path, file_check, save_df, get_df
 
 
 def big_query():
-    print 'Obtaining Big Query Data...\n\n'
+    print 'Obtaining Big Query Data...\n---------------------------\n'
     # BQ Project Name
     project = 'hypnotic-bounty-755'
     # How many days over which to compute RFM
@@ -14,14 +14,12 @@ def big_query():
     dates = gbq.get_dates(days)
     # Compute model over given range9
     agg = an.aggregate(project, dates)
-    print 'Big Query Data Obtained.'
     return agg
 
 
 def salesforce(path):
-    print 'Obtaining Salesforce Data...'
-    sf = pd.DataFrame(pd.read_csv(path+'/Raw/salesforce_2.0.csv'))
-    print '...Received Salesforce Data\n\n'
+    print 'Obtaining Salesforce Data\n-------------------------\n'
+    sf = get_df(path+'/Raw/salesforce_2.0')
     return sf
 
 
@@ -29,9 +27,15 @@ def main():
 
     path = get_path()
 
-    # bq = big_query()
+    bq = big_query()
     sf = salesforce(path)
-    print sf
+
+
+
+
+
+
+
 
     # compute recency, frequency etc
     # rfm = an.rf_compute(agg)
