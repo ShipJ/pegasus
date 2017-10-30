@@ -1,17 +1,32 @@
+import sys
+import numpy as np
+import pandas as pd
 from Config.structure import get_path
-from Projects.RFM.extract_functions import big_query, salesforce
-
-
-def summarise(df):
-    print 'Number of Rows: %d' % len(df)
+from Projects.RFM.extract_functions import bigquery, rf_compute
 
 
 def main():
     path = get_path()
 
-    bq = big_query()
+    bq = bigquery()
+    bq = rf_compute(bq)
 
-    sf = salesforce(path)
+
+    bq.to_csv('/Users/JackShipway/Desktop/Joined/gabq', index=None)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 if __name__ == '__main__':
